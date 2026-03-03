@@ -14,16 +14,17 @@
   font-size: 16px;
   cursor: pointer;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
   background-color: rgb(104, 76, 76);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Reset button styles */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -37,7 +38,7 @@ body {
 .reset-button {
   background-color: transparent;
   color: white;
-  border: 2px solid rgba(255,255,255,0.9);
+  border: 2px solid rgba(255, 255, 255, 0.9);
   padding: 8px 14px;
   font-size: 14px;
   cursor: pointer;
@@ -46,4 +47,18 @@ body {
 
 .reset-button:hover {
   background-color: rgba(255, 255, 255, 0.259);
+}
+
+#image-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.random-image {
+  width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
