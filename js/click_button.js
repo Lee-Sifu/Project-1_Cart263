@@ -11,10 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Image Array
 	const images = [
-		'img/panda1.jpg',
-		'img/panda2.jpg',
-		'img/panda3.jpeg',
-		'img/food.jpeg',
+		'panda1.jpeg',
+		'panda2.jpg',
+		'panda3.jpg',
+		'food.jpeg',
+		'food2.jpeg',
+		'food3.jpeg',
+		'food4.jpeg',
+		'plant.jpg',
+		'plant2.jpg',
+		'plant3.jpg',
+		'plant4.jpg',
 	];
 
 	// Avoid repeated image spawn
