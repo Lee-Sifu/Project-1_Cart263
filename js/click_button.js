@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		count += 1;
 		countEl.textContent = count;
 		changeBackgroundColor();
+
 		//Random picture spawn when 10 clicks
 		if (count >= 10 && !showAt10) {
 			showRandomImage();
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		showAt15 = false;
 
 		imageContainer.innerHTML = '';
+		document.body.style.backgroundColor = '#ffffff'; // Reset background color
 	});
 
 	// Function to show a random image
@@ -79,9 +81,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	function changeBackgroundColor() {
 		const bgColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
 		document.body.style.backgroundColor = bgColor;
-	
-		if (resetBtn.clicked) {
-			document.body.style.backgroundColor = '#ffffff'; // Reset to white when count is 0
-		}
 	}
 });
