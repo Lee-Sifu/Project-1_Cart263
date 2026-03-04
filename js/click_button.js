@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const countEl = document.getElementById('click-count');
 	const resetBtn = document.getElementById('reset-btn');
 	const imageContainer = document.getElementById('image-container');
-	const changeBackgroundColor = document.getElementById('random-color');
+	
 	// Initialize count from the displayed text, or start at 0 if it's not a number
 	let count = 0;
 
@@ -73,5 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		img.classList.add('random-image');
 
 		imageContainer.appendChild(img);
+	}
+
+	// Function to change background color
+	function changeBackgroundColor() {
+		const bgColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+		document.body.style.backgroundColor = bgColor;
 	}
 });
