@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		'img/plant2.jpg',
 		'img/plant3.jpg',
 		'img/plant4.jpg',
+		'img/artwork.jpg',
+		'img/artwork2.jpg',
+		'img/artwork3.jpg',
+		'img/artwork4.jpg',
 	];
 
 	// Avoid repeated image spawn
@@ -89,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.body.style.backgroundColor = bgColor;
 	}
 
-	// Function to change background image with 10% chance
+	// Function to change background image with 50% chance
 	function changeBackgroundImage() {
 		if (Math.random() < 0.5) {
 			const randomIndex = Math.floor(Math.random() * images.length);
