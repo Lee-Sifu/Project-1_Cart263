@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const countEl = document.getElementById('click-count');
 	const resetBtn = document.getElementById('reset-btn');
 	const imageContainer = document.getElementById('image-container');
-
+	const changeBackgroundColor = document.getElementById('random-color');
 	// Initialize count from the displayed text, or start at 0 if it's not a number
 	let count = 0;
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	clickArea.addEventListener('click', () => {
 		count += 1;
 		countEl.textContent = count;
-
+		changeBackgroundColor();
 		//Random picture spawn when 10 clicks
 		if (count >= 10 && !showAt10) {
 			showRandomImage();
