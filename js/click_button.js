@@ -69,12 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// Random index
 		const randomIndex = Math.floor(Math.random() * images.length);
-
+		const randomPositionX = Math.random() * (window.innerWidth - 100); // Adjust for image width
+		const randomPositionY = Math.random() * (window.innerHeight - 100); // Adjust for image height
 		// Create image element
 		const img = document.createElement('img');
 
 		img.src = images[randomIndex];
 		img.classList.add('random-image');
+		img.style.position = 'absolute';
+		img.style.left = `${randomPositionX}px`;
+		img.style.top = `${randomPositionY}px`;
 
 		imageContainer.appendChild(img);
 	}
