@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		count += 1;
 		countEl.textContent = count;
 		changeBackgroundColor();
+		changeBackgroundImage();
 
 		//Random picture spawn when 10 clicks
 		if (count >= 10 && !showAt10) {
@@ -59,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		showAt15 = false;
 
 		imageContainer.innerHTML = '';
-		document.body.style.backgroundColor = '#ffffff'; // Reset background color
+		document.body.style.backgroundColor = '#ffffff'; // Reset background color to white
+		document.body.style.backgroundImage = ''; // Remove background image
 	});
 
 	// Function to show a random image
@@ -81,5 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	function changeBackgroundColor() {
 		const bgColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
 		document.body.style.backgroundColor = bgColor;
+	}
+
+	// Function to change background image with 10% chance
+	function changeBackgroundImage() {
+		if (Math.random() < 0.5) {
+			const randomIndex = Math.floor(Math.random() * images.length);
+			document.body.style.backgroundImage = `url(${images[randomIndex]})`;
+			document.body.style.backgroundSize = 'cover';
+		} else {
+			document.body.style.backgroundImage = '';
+		}
 	}
 });
