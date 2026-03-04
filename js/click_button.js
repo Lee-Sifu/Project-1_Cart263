@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const countEl = document.getElementById('click-count');
 	const resetBtn = document.getElementById('reset-btn');
 	const imageContainer = document.getElementById('image-container');
-	
+
 	// Initialize count from the displayed text, or start at 0 if it's not a number
 	let count = 0;
 
@@ -79,5 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	function changeBackgroundColor() {
 		const bgColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
 		document.body.style.backgroundColor = bgColor;
+	
+		if (resetBtn.clicked) {
+			document.body.style.backgroundColor = '#ffffff'; // Reset to white when count is 0
+		}
 	}
 });
