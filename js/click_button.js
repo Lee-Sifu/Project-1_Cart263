@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const randomIndex = Math.floor(Math.random() * images.length);
 		const randomPositionX = Math.random() * (window.innerWidth - 100); // Adjust for image width
 		const randomPositionY = Math.random() * (window.innerHeight - 100); // Adjust for image height
+		// Random rotation
+		const randomRotation = Math.random() * 360;
 		// Create image element
 		const img = document.createElement('img');
 
@@ -81,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		img.style.position = 'absolute';
 		img.style.left = `${randomPositionX}px`;
 		img.style.top = `${randomPositionY}px`;
+		img.style.transform = `rotate(${randomRotation}deg)`;
 
 		imageContainer.appendChild(img);
 	}
