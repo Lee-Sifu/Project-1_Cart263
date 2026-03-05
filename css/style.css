@@ -84,3 +84,17 @@ body {
     transform: translate(5px, -5px) rotate(-1deg);
   }
 }
+
+#system-warning {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: bold;
+  color: red;
+  background: black;
+  padding: 20px 40px;
+  z-index: 9999;
+  text-align: center;
+}

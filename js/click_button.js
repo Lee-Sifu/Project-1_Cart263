@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (count === 30 && !hasBroken) {
 			hasBroken = true;
 			triggerShake();
+			showWarningMessage();
 		}
 
 	});
@@ -104,6 +105,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Stop shaking after 3 seconds
 		setTimeout(() => {
 			document.body.style.animation = "";
+		}, 3000);
+	}
+
+	// Alert message in collapse mode
+	function showWarningMessage() {
+		const warning = document.createElement('div');
+		warning.textContent = "YOU ARE BREAKING THE SYSTEM!";
+		warning.id = 'system-warning';
+
+		document.body.appendChild(warning);
+
+		// Remove warning after 3 seconds
+		setTimeout(() => {
+			warning.remove();
 		}, 3000);
 	}
 });
