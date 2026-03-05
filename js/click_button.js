@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			showWarningMessage();
 		}
 
+		// Reset after 50 clicks
+		if (count === 50) {
+			autoReset();
+		}
 	});
 
 	// Add click event listener to the reset button
@@ -120,5 +124,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		setTimeout(() => {
 			warning.remove();
 		}, 3000);
+	}
+
+	// Auto reset after 50 clicks
+	function autoReset() {
+		alert("System Overload! Resetting...");
+		resetAll();
+	}
+
+	function resetAll() {
+		count = 0;
+		countEl.textContent = count;
+		hasBroken = false;
+
+		imageContainer.innerHTML = '';
+		document.body.style.backgroundColor = '#ffffff';
+		document.body.style.backgroundImage = '';
+		document.body.style.animation = '';
 	}
 });
