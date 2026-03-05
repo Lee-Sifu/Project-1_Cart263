@@ -28,11 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		'img/artwork4.jpg',
 	];
 
-	// Avoid repeated image spawn
-	let showAt10 = false;
-	let showAt15 = false;
-
-
 	// Add click event listener to the click area
 	clickArea.addEventListener('click', () => {
 		count += 1;
@@ -40,16 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		changeBackgroundColor();
 		changeBackgroundImage();
 
-		//Random picture spawn when 10 clicks
-		if (count >= 10 && !showAt10) {
+		//Random picture spawn every 5 clicks
+		if (count % 5 === 0) {
 			showRandomImage();
-			showAt10 = true;
-		}
-
-		// One more picture spawn when 15 clicks
-		if (count >= 15 && !showAt15) {
-			showRandomImage();
-			showAt15 = true;
 		}
 	});
 
