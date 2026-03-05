@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Initialize count from the displayed text, or start at 0 if it's not a number
 	let count = 0;
+	let hasBroken = false;
 
 	// Image Array
 	const images = [
@@ -39,6 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (count % 5 === 0) {
 			showRandomImage();
 		}
+
+		// Collapse mode when you reach 30 clicks
+		if (count === 30 && !hasBroken) {
+			hasBroken = true;
+			triggerShake();
+		}
+
 	});
 
 	// Add click event listener to the reset button
@@ -47,9 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		count = 0;
 		countEl.textContent = count;
-
-		showAt10 = false;
-		showAt15 = false;
 
 		imageContainer.innerHTML = '';
 		document.body.style.backgroundColor = '#ffffff'; // Reset background color to white
@@ -90,5 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		} else {
 			document.body.style.backgroundImage = '';
 		}
+	}
+
+	// Trigger shake animation
+	function triggerShake() {
+		document.body.style.animation = "shake 0.5s infinite";
+
+		// Stop shaking after 3 seconds
+		setTimeout(() => {
+			document.body.style.animation = "";
+		}, 3000);
 	}
 });
